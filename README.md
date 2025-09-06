@@ -9,3 +9,6 @@ David Bombal networking course day 01 : )
 ---------------------------------------------------------------------------------- : )
 
 Day02:
+1: Creating two networks connecting them with the switech and then to the router 
+and the router will be connected to the Internet and we are accessing the servers from the other side of 
+the network like cisco server facebook server etc
