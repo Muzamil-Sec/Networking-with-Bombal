@@ -43,3 +43,76 @@ That's mean for 192 the binary number is = 11111100
 same with the 168, 1 and 100
 This is called subneeting : )
 
+
+------------------------------------------------------------------- :  )
+
+
+Day 04: Hexadecimal Numbers
+
+Hexadecimal is base 16
+That means instead of counting 0–9 only (like decimal), it goes up to 15, but for numbers 10–15 we use letters A–F:
+Decimal → Hex
+10 → A
+11 → B
+12 → C
+13 → D
+14 → E
+15 → F
+
+Lets break down this more
+convert 192.168.1.100 to binary which is 
+
+192= 11000000
+168= 10101000
+1= 00000001
+100 = 01100100
+
+Step 3: Split into 4 bits
+
+1100 0000
+
+1010 1000
+
+0000 0001
+
+0110 0100
+
+
+Step 1: Binary → Decimal
+
+Take 4 bits (a nibble) and expand them using the table of powers of 2:
+
+Binary	2³ (8) |	2² (4) |	2¹ (2) |	2⁰ (1) |	Add them → Decimal
+1100	  1×8=8  |	1×4=4  |	0×2=0  |	0×1=0  |	8+4 = 12
+1010	  1×8=8  |	0×4=0  |	1×2=2  |	0×1=0	 |  8+2 = 10
+0110	  0×8=0  |	1×4=4  |	1×2=2  |	0×1=0  |	4+2 = 6
+0100	  0×8=0  |	1×4=4  |	0×2=0  |	0×1=0  |	4 = 4
+
+Hex uses 0–9 and A–F:
+
+10 = A
+
+11 = B
+
+12 = C
+
+13 = D
+
+14 = E
+
+15 = F
+
+
+Step 5: Write in Hexadecimal
+
+192 = C0
+
+168 = A8
+
+1 = 01
+
+100 = 64
+
+👉 IP in Hex = C0.A8.01.64
+
+Done we converted it to Hexadecimal : )
