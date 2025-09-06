@@ -116,3 +116,101 @@ Step 5: Write in Hexadecimal
 👉 IP in Hex = C0.A8.01.64
 
 Done we converted it to Hexadecimal : )
+
+
+
+
+------------------------------------------------: )
+
+Day05: IP addresses IPV4 and the classes
+
+IPv4 Address Classes
+
+IPv4 addresses are 32 bits (4 octets). To make things easy, they were divided into classes (A, B, C, D, E) based on how many networks and hosts they can support.
+
+Think of it like different sizes of boxes 🧰: small, medium, large, special use.
+
+Class A:
+Range: 1.0.0.0 – 126.0.0.0
+Default Subnet Mask: 255.0.0.0 (/8)
+First Octet (1–126) identifies the Network, rest are Hosts.
+Supports: Few networks, but millions of hosts in each.
+Example: 10.0.0.1 → Class A
+
+
+Class B:
+Range: 128.0.0.0 – 191.255.0.0
+Default Subnet Mask: 255.255.0.0 (/16)
+First 2 Octets = Network, last 2 = Hosts.
+Supports: Medium number of networks & hosts.
+Example: 172.16.5.10 → Class B
+
+
+Class C:
+Range: 192.0.0.0 – 223.255.255.0
+Default Subnet Mask: 255.255.255.0 (/24)
+First 3 Octets = Network, last = Hosts.
+Supports: Many networks, but only 254 hosts per network.
+Example: 192.168.1.10 → Class C
+
+
+Class D (Multicast):
+Range: 224.0.0.0 – 239.255.255.255
+Not used for normal hosts.
+Used for multicasting (sending data to a group).
+
+
+Class E (Experimental):
+Range: 240.0.0.0 – 255.255.255.255
+Reserved for research/testing, not for normal use.
+
+
+CIDR (Classless Inter-Domain Routing)
+Now, here’s the trick 👉 The class system was wasteful. For example, if you only need 300 hosts, Class B gives you 65,534 hosts 😅 (too much wasted space).
+So, CIDR was introduced.
+What is CIDR?
+CIDR = Classless Inter-Domain Routing
+Instead of fixed Class A, B, C masks, we use a slash (/) notation to specify how many bits are network.
+Example:
+192.168.1.0/24 → First 24 bits = Network, last 8 = Hosts.
+10.0.0.0/8 → First 8 bits = Network, rest 24 = Hosts.
+172.16.0.0/20 → First 20 bits = Network, rest 12 = Hosts.
+👉 This allows flexible subnetting, no waste.
+🎯 Super Easy Analogy
+Classes = Fixed box sizes (small, medium, large).
+CIDR = Custom box size (you cut it exactly how much you need).
+⚡ Example:
+Old (Classful): 192.168.1.0 always = /24
+New (CIDR): 192.168.1.0/26 → means only 64 IPs (not 256).
+
+
+<img width="1337" height="870" alt="image" src="https://github.com/user-attachments/assets/51a2032f-a257-4750-b3e9-7f5fa2d84551" />
+
+
+
+Loopback Address:
+The loopback address is 127.0.0.1 (or the whole range 127.0.0.0 – 127.255.255.255).
+It’s used to test your own computer’s networking.
+Example: If you type ping 127.0.0.1, your computer pings itself.
+💡 It’s like talking to yourself to check if your mouth and ears are working.
+
+
+Local Broadcast Address:
+The local broadcast address is 255.255.255.255.
+It sends a message to all devices in the local network.
+Example: When a device doesn’t know the IP of the DHCP server, it broadcasts a request to everyone using this address.
+💡 It’s like shouting in a room — everyone in the same room hears you.
+
+
+
+Network Mask (Subnet Mask):
+A network mask (like 255.255.255.0) is used to separate the Network part and the Host part of an IP address.
+Example:
+IP: 192.168.1.10
+Mask: 255.255.255.0
+Network = 192.168.1.0
+Host range = .1 to .254
+💡 The mask decides which part of the address tells “which network” and which part tells “which device.”
+
+
+
